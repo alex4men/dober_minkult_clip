@@ -1,6 +1,3 @@
 wheel
 transformers
-# onnxruntime-gpu #--extra-index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/
-# nvidia-pyindex
-# clip_server[onnx]
 clip-server[search]

@@ -19,7 +19,7 @@ docker-compose up -d --build
 ```
 
 ## FAST API Docs url:
-http://0.0.0.0:51008/docs
+http://0.0.0.0:51009/docs
 
 
 # Ссылки:
