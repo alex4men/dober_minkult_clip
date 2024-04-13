@@ -1,0 +1,27 @@
+jtype: Flow
+version: '1'
+with:
+  port: 51000
+  protocol: http
+  cors: True
+executors:
+  - name: clip_t
+    uses:
+      jtype: CLIPEncoder
+      with:
+        name: M-CLIP/XLM-Roberta-Large-Vit-B-16Plus
+        device: 'cuda'
+      metas:
+        py_modules:
+          - clip_server.executors.clip_torch
+
+  - name: indexer
+    uses:
+      jtype: AnnLiteIndexer
+      with:
+        n_dim: 640
+        limit: 10
+      metas:
+        py_modules:
+          - annlite.executor
+    workspace: './workspace'

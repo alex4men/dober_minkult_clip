@@ -1,0 +1,21 @@
+version: '3'
+services:
+  clip_service_m:
+    build: .
+    restart: "always"
+    environment:
+      - JINA_LOG_LEVEL=DEBUG
+    volumes:
+    - ./.cache:/home/cas/.cache
+    - ./clip_config_m.yml:/cas/clip_config_m.yml
+    working_dir: /cas
+    ports:
+      - "51008:51000"
+    command: clip_config_m.yml
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            device_ids: ['0']
+            capabilities: [gpu]
